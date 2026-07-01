@@ -1,164 +1,25 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Designer Workspace</title>
+<!DOCTYPE html>
+<html>
 
-    <link rel="stylesheet" href="css/designer.css" />
+<head>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<title>Designer</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet"
+href="css/designer.css">
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+</head>
 
-  <body>
-    <header>
-      <div class="logo">🏠 Virtual Interior Designer</div>
+<body>
 
-      <div class="top-buttons">
-        <button id="wallBtn">Wall</button>
+<h1>
 
-        <button id="floorBtn">Floor</button>
+Designer Page
 
-        <a href="index.html">
-          <button>Home</button>
-        </a>
-      </div>
-    </header>
+</h1>
 
-    <div class="workspace">
-      <!-- LEFT SIDEBAR -->
+<script src="js/designer.js"></script>
 
-      <aside class="sidebar">
-        <h2>Furniture</h2>
+</body>
 
-        <button class="item" data-type="bed">
-          <img src="assets/furniture/bed.png" alt="Bed" />
-          <span>Bed</span>
-        </button>
-
-        <button class="item" data-type="sofa">
-          <img src="assets/furniture/sofa.png" alt="Sofa" />
-          <span>Sofa</span>
-        </button>
-
-        <button class="item" data-type="chair">
-          <img src="assets/furniture/chair.png" alt="Chair" />
-          <span>Chair</span>
-        </button>
-
-        <button class="item" data-type="table">
-          <img src="assets/furniture/table.png" alt="Table" />
-          <span>Table</span>
-        </button>
-
-        <button class="item" data-type="tv">
-          <img src="assets/furniture/tv.png" alt="TV" />
-          <span>TV</span>
-        </button>
-
-        <button class="item" data-type="lamp">
-          <img src="assets/furniture/lamp.png" alt="Lamp" />
-          <span>Lamp</span>
-        </button>
-
-        <button class="item" data-type="plant">
-          <img src="assets/furniture/plant.png" alt="Plant" />
-          <span>Plant</span>
-        </button>
-
-        <button class="item" data-type="painting">
-          <img src="assets/furniture/painting.png" alt="Painting" />
-          <span>Painting</span>
-        </button>
-
-        <button class="item" data-type="window">
-          <img src="assets/furniture/window.png" alt="Window" />
-          <span>Window</span>
-        </button>
-
-        <button class="item" data-type="carpet">
-          <img src="assets/furniture/carpet.png" alt="Carpet" />
-          <span>Carpet</span>
-        </button>
-      </aside>
-
-      <!-- ROOM -->
-
-      <main class="room-section">
-        <div class="room">
-          <div class="wall">
-            <div id="canvas"></div>
-          </div>
-
-          <div class="floor"></div>
-        </div>
-      </main>
-
-      <!-- RIGHT PANEL -->
-
-      <aside class="properties">
-        <h2>Selected</h2>
-
-        <p id="selectedName">None Selected</p>
-
-        <hr />
-
-        <h3>Move</h3>
-
-        <div class="move-grid">
-          <button id="up">↑</button>
-
-          <div></div>
-
-          <button id="left">←</button>
-
-          <button id="down">↓</button>
-
-          <button id="right">→</button>
-        </div>
-
-        <button id="rotateLeft">Rotate Left</button>
-
-        <button id="rotateRight">Rotate Right</button>
-
-        <button id="delete">Delete</button>
-
-        <hr />
-
-        <h3>Wall Color</h3>
-
-        <div class="colors">
-          <button class="color white"></button>
-
-          <button class="color cream"></button>
-
-          <button class="color blue"></button>
-
-          <button class="color gray"></button>
-
-          <button class="color green"></button>
-        </div>
-
-        <hr />
-
-        <h3>Floor</h3>
-
-        <select id="floorSelect">
-          <option value="wood">Wood</option>
-          <option value="darkwood">Dark Wood</option>
-          <option value="tiles">Tiles</option>
-          <option value="marble">Marble</option>
-        </select>
-      </aside>
-    </div>
-
-    <script src="js/designer.js"></script>
-  </body>
 </html>
