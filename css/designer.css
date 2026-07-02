@@ -191,31 +191,39 @@ body {
   cursor: pointer;
 }
 
-#roomCanvas {
-  flex: 1;
-  background: var(--canvas);
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  border: 6px solid #222;
+#roomCanvas{
+
+position:relative;
+
+overflow:hidden;
+
 }
 
-/* 2.5D ROOM */
+#roomImage{
 
-#roomImage {
-  position: absolute;
+width:100%;
 
-  width: 100%;
+height:100%;
 
-  height: 100%;
+object-fit:cover;
 
-  object-fit: cover;
+display:block;
 
-  user-select: none;
-
-  pointer-events: none;
 }
 
+#furnitureContainer{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+}
 .wall-overlay {
   position: absolute;
   inset: 0;
@@ -246,11 +254,7 @@ body {
   transform-origin: bottom;
 }
 
-#furnitureContainer {
-  position: absolute;
-  inset: 0;
-  z-index: 20;
-}
+
 
 .canvas-message {
   position: absolute;
@@ -326,44 +330,6 @@ body {
   background: var(--danger);
 }
 
-.color-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.wall-color {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  cursor: pointer;
-}
-
-.wall-color:nth-child(1) {
-  background: #fff;
-}
-.wall-color:nth-child(2) {
-  background: #f4e6c5;
-}
-.wall-color:nth-child(3) {
-  background: #d9e8ff;
-}
-.wall-color:nth-child(4) {
-  background: #dcf4dc;
-}
-.wall-color:nth-child(5) {
-  background: #ddd;
-}
-.wall-color:nth-child(6) {
-  background: #ffe4d0;
-}
-
-.texture-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
 
 /* FOOTER */
 
@@ -457,4 +423,125 @@ body {
   height: auto;
   border-radius: 10px;
   border: 2px solid #ddd;
+}
+.furniture{
+
+user-select:none;
+
+-webkit-user-drag:none;
+
+}
+.furniture{
+
+will-change:transform;
+
+transform-origin:center;
+
+}
+@media (max-width:1200px){
+
+.workspace{
+
+grid-template-columns:240px 1fr 280px;
+
+}
+
+.sidebar{
+
+width:240px;
+
+}
+
+.properties{
+
+width:280px;
+
+}
+
+.canvas-toolbar button{
+
+padding:8px 12px;
+
+font-size:13px;
+
+}
+
+.furniture-card img{
+
+width:70px;
+
+}
+
+}
+@media (max-width:900px){
+
+.workspace{
+
+grid-template-columns:220px 1fr;
+
+}
+
+.properties{
+
+display:none;
+
+}
+
+.topbar{
+
+flex-wrap:wrap;
+
+height:auto;
+
+padding:15px;
+
+gap:15px;
+
+}
+
+.toolbar{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+}
+@media (max-width:700px){
+
+.workspace{
+
+display:block;
+
+padding:10px;
+
+}
+
+.sidebar{
+
+display:none;
+
+}
+
+.canvas-toolbar{
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+#roomCanvas{
+
+height:70vh;
+
+}
+
+.statusbar{
+
+display:none;
+
+}
+
 }

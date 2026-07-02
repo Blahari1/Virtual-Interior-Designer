@@ -72,6 +72,11 @@ function addFurniture(type) {
   furniture.appendChild(img);
 
   furnitureContainer.appendChild(furniture);
+  const msg = document.querySelector(".canvas-message");
+
+  if (msg) {
+    msg.style.display = "none";
+  }
 
   makeSelectable(furniture);
 
@@ -115,8 +120,10 @@ function makeSelectable(item) {
   });
 }
 
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".furniture")) {
+const roomCanvas = document.getElementById("roomCanvas");
+
+roomCanvas.addEventListener("click", (e) => {
+  if (e.target === roomCanvas || e.target.id === "roomImage") {
     clearSelection();
 
     selectedFurniture = null;
@@ -124,6 +131,7 @@ document.addEventListener("click", (e) => {
     selectedName.textContent = "None";
   }
 });
+
 /* ===========================================
    Drag
 =========================================== */
@@ -303,57 +311,7 @@ themeBtn.onclick = () => {
     localStorage.setItem("theme", "dark");
   }
 };
-/* ===========================
-   Wall Colors
-=========================== */
 
-const roomWall = document.getElementById("roomWall");
-
-document.querySelectorAll(".wall-color").forEach((color) => {
-  color.onclick = () => {
-    roomWall.style.background = color.dataset.color;
-  };
-});
-/* ===========================
-   Floor
-=========================== */
-
-const roomFloor = document.getElementById("roomFloor");
-
-const floorButtons = document.querySelectorAll(".texture-grid button");
-
-floorButtons[0].onclick = () => {
-  roomFloor.style.background =
-    "repeating-linear-gradient(90deg,#c9965b 0,#c9965b 70px,#b9854e 70px,#b9854e 140px)";
-};
-
-floorButtons[1].onclick = () => {
-  roomFloor.style.background =
-    "repeating-linear-gradient(90deg,#7b5538 0,#7b5538 70px,#65462e 70px,#65462e 140px)";
-};
-
-floorButtons[2].onclick = () => {
-  roomFloor.style.background =
-    "repeating-linear-gradient(90deg,#ddd 0,#ddd 60px,#fff 60px,#fff 64px),repeating-linear-gradient(0deg,#ddd 0,#ddd 60px,#fff 60px,#fff 64px)";
-};
-
-floorButtons[3].onclick = () => {
-  roomFloor.style.background = "#ececec";
-};
-/* ===========================
-   Bring Front
-=========================== */
-
-document.getElementById("bringFront").onclick = () => {
-  if (!selectedFurniture) return;
-
-  selectedFurniture.style.zIndex = ++highestZ;
-};
-document.getElementById("sendBack").onclick = () => {
-  if (!selectedFurniture) return;
-
-  selectedFurniture.style.zIndex = 1;
-};
 /* ===========================
    Clear Room
 =========================== */
@@ -392,18 +350,15 @@ function changeRoom(room) {
 
   switch (room) {
     case "Bedroom":
-      roomImage.src =
-        "/Users/laharilahari/Desktop/VirtualInteriorDesigner/assets/rooms/room.png";
+      roomImage.src = "assets/rooms/room.png";
       break;
 
     case "Living Room":
-      roomImage.src =
-        "/Users/laharilahari/Desktop/VirtualInteriorDesigner/assets/rooms/livingroom.png";
+      roomImage.src = "assets/rooms/livingroom.png";
       break;
 
     case "Office":
-      roomImage.src =
-        "/Users/laharilahari/Desktop/VirtualInteriorDesigner/assets/rooms/office.png";
+      roomImage.src = "assets/rooms/office.png";
       break;
 
     default:
@@ -412,3 +367,108 @@ function changeRoom(room) {
 
   roomImage.alt = room;
 }
+/* =============================
+Keyboard Shortcuts
+=============================*/
+
+document.addEventListener("keydown",(e)=>{
+
+if(!selectedFurniture)return;
+
+switch(e.key){
+
+case "ArrowUp":
+
+move(0,-MOVE_STEP);
+
+break;
+
+case "ArrowDown":
+
+move(0,MOVE_STEP);
+
+break;
+
+case "ArrowLeft":
+
+move(-MOVE_STEP,0);
+
+break;
+
+case "ArrowRight":
+
+move(MOVE_STEP,0);
+
+break;
+
+case "Delete":
+
+selectedFurniture.remove();
+
+selectedFurniture=null;
+
+selectedName.textContent="None";
+
+break;
+
+case "r":
+
+rotate(ROTATE_STEP);
+
+break;
+
+case "R":
+
+rotate(-ROTATE_STEP);
+
+break;
+
+case "+":
+
+resize(SCALE_STEP);
+
+break;
+
+case "-":
+
+resize(-SCALE_STEP);
+
+break;
+
+}
+
+});
+document.addEventListener("keydown", (e) => {
+  if (e.ctrlKey && e.key === "d") {
+    e.preventDefault();
+
+    document.getElementById("duplicateBtn").click();
+  }
+});
+/* =============================
+Download PNG
+=============================*/
+
+document.getElementById("downloadBtn").onclick=()=>{
+
+const room=document.getElementById("roomCanvas");
+
+html2canvas(room,{
+
+backgroundColor:null,
+
+scale:2
+
+}).then(canvas=>{
+
+const link=document.createElement("a");
+
+link.download="MyInteriorDesign.png";
+
+link.href=canvas.toDataURL("image/png");
+
+link.click();
+
+});
+
+};

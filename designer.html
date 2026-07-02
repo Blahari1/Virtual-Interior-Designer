@@ -29,9 +29,8 @@
 
         <button id="clearRoomBtn">Clear Room</button>
 
-        <button id="saveBtn" class="primary-btn">Save</button>
 
-        <button id="exportBtn">Export PNG</button>
+        <button id="downloadBtn">Export PNG</button>
 
         <button id="themeBtn">🌙</button>
       </div>
@@ -124,11 +123,16 @@
         <div id="roomCanvas">
           <!-- Perspective Room -->
 
-          <div class="room-wall" id="roomWall">
-            <div class="wall-overlay"></div>
-          </div>
+          <div id="roomCanvas">
 
-          <div class="room-floor" id="roomFloor"></div>
+    <img
+        id="roomImage"
+        src="assets/rooms/room.png"
+        alt="Room">
+
+    <div id="furnitureContainer"></div>
+
+</div>
 
           <div id="furnitureContainer"></div>
 
@@ -187,15 +191,7 @@
           </div>
         </div>
 
-        <div class="property-card">
-          <h3>Layer</h3>
-
-          <div class="two-buttons">
-            <button id="bringFront">Bring Front</button>
-
-            <button id="sendBack">Send Back</button>
-          </div>
-        </div>
+      
 
         <div class="property-card">
           <h3>Actions</h3>
@@ -206,37 +202,9 @@
 
           <button class="action-btn delete" id="deleteBtn">Delete</button>
         </div>
-
-        <div class="property-card">
-          <h3>Wall Color</h3>
-
-          <div class="color-grid">
-            <button class="wall-color" data-color="#ffffff"></button>
-
-            <button class="wall-color" data-color="#f5f5dc"></button>
-
-            <button class="wall-color" data-color="#d9e8ff"></button>
-
-            <button class="wall-color" data-color="#d7f0d7"></button>
-
-            <button class="wall-color" data-color="#dddddd"></button>
-
-            <button class="wall-color" data-color="#ffe9d6"></button>
-          </div>
         </div>
 
-        <div class="property-card">
-          <h3>Floor Texture</h3>
-
-          <div class="texture-grid">
-            <button>Wood</button>
-
-            <button>Dark</button>
-
-            <button>Tiles</button>
-
-            <button>Marble</button>
-          </div>
+        
         </div>
       </aside>
     </div>
@@ -245,13 +213,13 @@
 
     <footer class="statusbar">
       <span
-        >Tip: Drag furniture inside the room. Resize, rotate and customize your
+        >Tip: Click furniture inside the room. Resize, rotate and customize your
         design.</span
       >
 
       <span>Version 1.0</span>
     </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script src="js/designer.js"></script>
   </body>
 </html>
