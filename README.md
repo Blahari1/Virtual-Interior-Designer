@@ -22,7 +22,7 @@ A modern **browser-based Virtual Interior Designer** built using **HTML, CSS, an
 
 ## Designer Workspace
 
-![Designer Workspace](screenshots/designworkspace.png)
+![Designer Workspace](screenshots/designingworkspace.png)
 
 ## Bedroom Design
 
