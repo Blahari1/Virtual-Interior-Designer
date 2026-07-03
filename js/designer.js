@@ -1,6 +1,5 @@
 /* ===========================================
    Virtual Interior Designer
-   Part 1
 =========================================== */
 
 const furnitureContainer = document.getElementById("furnitureContainer");
@@ -338,16 +337,15 @@ document.getElementById("newRoomBtn").onclick = () => {
     selectedName.innerHTML = "None";
 
     furnitureCounter = 0;
-
-    roomWall.style.background = "#f3f3f3";
-
-    roomFloor.style.background =
-      "repeating-linear-gradient(90deg,#c9965b 0,#c9965b 70px,#b9854e 70px,#b9854e 140px)";
   }
 };
-function changeRoom(room) {
+function changeRoom(room, button) {
   const roomImage = document.getElementById("roomImage");
+  document.querySelectorAll(".room-btn").forEach((btn) => {
+    btn.classList.remove("active");
+  });
 
+  button.classList.add("active");
   switch (room) {
     case "Bedroom":
       roomImage.src = "assets/rooms/room.png";
@@ -371,72 +369,59 @@ function changeRoom(room) {
 Keyboard Shortcuts
 =============================*/
 
-document.addEventListener("keydown",(e)=>{
+document.addEventListener("keydown", (e) => {
+  if (!selectedFurniture) return;
 
-if(!selectedFurniture)return;
+  switch (e.key) {
+    case "ArrowUp":
+      move(0, -MOVE_STEP);
 
-switch(e.key){
+      break;
 
-case "ArrowUp":
+    case "ArrowDown":
+      move(0, MOVE_STEP);
 
-move(0,-MOVE_STEP);
+      break;
 
-break;
+    case "ArrowLeft":
+      move(-MOVE_STEP, 0);
 
-case "ArrowDown":
+      break;
 
-move(0,MOVE_STEP);
+    case "ArrowRight":
+      move(MOVE_STEP, 0);
 
-break;
+      break;
 
-case "ArrowLeft":
+    case "Delete":
+      selectedFurniture.remove();
 
-move(-MOVE_STEP,0);
+      selectedFurniture = null;
 
-break;
+      selectedName.textContent = "None";
 
-case "ArrowRight":
+      break;
 
-move(MOVE_STEP,0);
+    case "r":
+      rotate(ROTATE_STEP);
 
-break;
+      break;
 
-case "Delete":
+    case "R":
+      rotate(-ROTATE_STEP);
 
-selectedFurniture.remove();
+      break;
 
-selectedFurniture=null;
+    case "+":
+      resize(SCALE_STEP);
 
-selectedName.textContent="None";
+      break;
 
-break;
+    case "-":
+      resize(-SCALE_STEP);
 
-case "r":
-
-rotate(ROTATE_STEP);
-
-break;
-
-case "R":
-
-rotate(-ROTATE_STEP);
-
-break;
-
-case "+":
-
-resize(SCALE_STEP);
-
-break;
-
-case "-":
-
-resize(-SCALE_STEP);
-
-break;
-
-}
-
+      break;
+  }
 });
 document.addEventListener("keydown", (e) => {
   if (e.ctrlKey && e.key === "d") {
@@ -449,26 +434,20 @@ document.addEventListener("keydown", (e) => {
 Download PNG
 =============================*/
 
-document.getElementById("downloadBtn").onclick=()=>{
+document.getElementById("downloadBtn").onclick = () => {
+  const room = document.getElementById("roomCanvas");
 
-const room=document.getElementById("roomCanvas");
+  html2canvas(room, {
+    backgroundColor: null,
 
-html2canvas(room,{
+    scale: 2,
+  }).then((canvas) => {
+    const link = document.createElement("a");
 
-backgroundColor:null,
+    link.download = "MyInteriorDesign.png";
 
-scale:2
+    link.href = canvas.toDataURL("image/png");
 
-}).then(canvas=>{
-
-const link=document.createElement("a");
-
-link.download="MyInteriorDesign.png";
-
-link.href=canvas.toDataURL("image/png");
-
-link.click();
-
-});
-
+    link.click();
+  });
 };

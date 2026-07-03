@@ -1,186 +1,494 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Virtual Interior Designer</title>
-
-<link rel="stylesheet" href="css/style.css">
-
-<link
-rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
-</head>
-
-<body>
-
-<nav>
-
-<div class="logo">
-
-🏠 Virtual Interior Designer
-
-</div>
-
-<ul>
-
-<li>Home</li>
-
-<li>Features</li>
-
-<li>About</li>
-
-<li>
-
-<button id="themeBtn">
-
-🌙
-
-</button>
-
-</li>
-
-</ul>
-
-</nav>
-
-
-<header>
-
-<div class="hero">
-
-<h1>
-
-Design Your Dream Room
-
-</h1>
-
-<p>
-
-Create beautiful interiors directly inside your browser.
-
-Move furniture, rotate objects, resize items and customize walls & floors.
-
-</p>
-
-<a href="designer.html">
-
-<button>
-
-Start Designing
-
-</button>
-
-</a>
-
-</div>
-
-</header>
-
-
-<section class="features">
-
-<h2>
-
-Features
-
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-🛋
-
-<h3>
-
-Furniture Library
-
-</h3>
-
-<p>
-
-Beds, Sofas, Chairs, TV, Plants and more.
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-🎨
-
-<h3>
-
-Customize Room
-
-</h3>
-
-<p>
-
-Change walls and flooring instantly.
-
-</p>
-
-</div>
-
-<div class="card">
-
-📐
-
-<h3>
-
-Resize & Rotate
-
-</h3>
-
-<p>
-
-Scale and rotate every furniture item.
-
-</p>
-
-</div>
-
-<div class="card">
-
-💾
-
-<h3>
-
-Save Design
-
-</h3>
-
-<p>
-
-Export and continue your work later.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-Made with ❤️ using HTML CSS JavaScript
-
-</footer>
-
-<script src="js/app.js"></script>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Virtual Interior Designer - Design beautiful rooms directly in your browser."
+    />
+    <meta
+      name="keywords"
+      content="Interior Designer, Planner, Room Design, HTML, CSS, JavaScript"
+    />
+    <meta name="author" content="Lahari" />
+
+    <title>Virtual Interior Designer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header" id="home">
+      <nav class="navbar">
+        <div class="logo">
+          <div class="logo-icon">🏡</div>
+
+          <span>Virtual Interior Designer</span>
+        </div>
+
+        <ul class="nav-links">
+          <li>
+            <a href="#home">Home</a>
+          </li>
+
+          <li>
+            <a href="#features">Features</a>
+          </li>
+
+          <li>
+            <a href="#preview">Preview</a>
+          </li>
+
+          <li>
+            <a href="#workflow" target="_blank"> How it Works </a>
+          </li>
+          <li>
+            <a href="#technology">Technology</a>
+          </li>
+          <li>
+            <a href="#cta">Get Started</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <button
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Toggle Theme"
+          >
+            <span class="theme-icon"> 🌙 </span>
+          </button>
+
+          <a href="designer.html" class="btn btn-primary"> Start Designing </a>
+
+          <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+      </nav>
+    </header>
+    <!-- Hero Section -->
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <span class="hero-badge"> ✨ Browser Based Interior Designer </span>
+          <h1>
+            Design Beautiful Spaces
+            <span class="gradient-text"> Without Professional Software </span>
+          </h1>
+          <p>
+            Create elegant bedrooms, living rooms, and office layouts using a
+            simple drag-and-design experience. Arrange furniture, customize
+            layouts, and export your design as a high-quality PNG—all directly
+            from your browser.
+          </p>
+          <div class="hero-buttons">
+            <a href="designer.html" class="btn btn-primary btn-large">
+              Start Designing
+            </a>
+            <a href="#features" class="btn btn-secondary btn-large">
+              Explore Features
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <h3>3</h3>
+              <span>Room Templates</span>
+            </div>
+            <div class="stat-card">
+              <h3>8+</h3>
+              <span>Furniture Items</span>
+            </div>
+            <div class="stat-card">
+              <h3>100%</h3>
+              <span>Browser Based</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="mockup-window">
+            <div class="mockup-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-sidebar">
+                <div class="sidebar-item active"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+              </div>
+              <div class="mockup-canvas">
+                <img
+                  src="assets/rooms/room.png"
+                  alt="Bedroom Preview"
+                  class="hero-room-image"
+                />
+                <div class="floating-card card-1">🛏 Bedroom</div>
+                <div class="floating-card card-2">🪑 Furniture</div>
+                <div class="floating-card card-3">📷 Export PNG</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Features Section -->
+      <section class="features" id="features">
+        <div class="section-header">
+          <span class="section-tag"> FEATURES </span>
+          <h2>Everything You Need to Design a Room</h2>
+          <p>Powerful tools packed inside a lightweight browser application.</p>
+        </div>
+        <div class="feature-grid">
+          <!-- Feature Card 1 -->
+          <article class="feature-card">
+            <div class="feature-icon">🛋</div>
+            <h3>Add Furniture</h3>
+            <p>
+              Quickly place beds, sofas, tables, lamps, carpets, plants, TVs and
+              chairs into your room.
+            </p>
+          </article>
+
+          <!-- Feature Card 2 -->
+
+          <article class="feature-card">
+            <div class="feature-icon">📐</div>
+
+            <h3>Resize Objects</h3>
+
+            <p>
+              Adjust furniture dimensions to perfectly fit your room layout.
+            </p>
+          </article>
+
+          <!-- Feature Card 3 -->
+
+          <article class="feature-card">
+            <div class="feature-icon">🔄</div>
+
+            <h3>Rotate Furniture</h3>
+
+            <p>Rotate items naturally to create realistic room arrangements.</p>
+          </article>
+          <!-- Feature Card 4 -->
+
+          <article class="feature-card">
+            <div class="feature-icon">📑</div>
+
+            <h3>Duplicate Items</h3>
+
+            <p>
+              Instantly create copies of furniture to speed up room design and
+              maintain consistent layouts.
+            </p>
+          </article>
+
+          <!-- Feature Card 5 -->
+
+          <article class="feature-card">
+            <div class="feature-icon">📷</div>
+
+            <h3>Download PNG</h3>
+
+            <p>
+              Export your completed room design as a high-quality PNG image with
+              a single click.
+            </p>
+          </article>
+
+          <!-- Feature Card 6 -->
+
+          <article class="feature-card">
+            <div class="feature-icon">🏠</div>
+
+            <h3>Multiple Rooms</h3>
+
+            <p>
+              Design bedrooms, living rooms, and office spaces using
+              professionally prepared room templates.
+            </p>
+          </article>
+        </div>
+      </section>
+      <!-- Preview Section -->
+      <section class="preview" id="preview">
+        <div class="section-header">
+          <span class="section-tag"> PREVIEW </span>
+
+          <h2>Beautiful Room Templates</h2>
+
+          <p>
+            Start with professionally designed rooms and customize them to match
+            your imagination.
+          </p>
+        </div>
+
+        <div class="preview-grid">
+          <!-- Bedroom -->
+
+          <article class="preview-card">
+            <div class="preview-image">
+              <img src="assets/rooms/room.png" alt="Bedroom Template" />
+            </div>
+
+            <div class="preview-content">
+              <h3>Bedroom</h3>
+
+              <p>
+                Modern Scandinavian bedroom with elegant lighting, wooden
+                flooring, and clean aesthetics.
+              </p>
+            </div>
+          </article>
+
+          <!-- Living Room -->
+
+          <article class="preview-card">
+            <div class="preview-image">
+              <img
+                src="assets/rooms/livingroom.png"
+                alt="Living Room Template"
+              />
+            </div>
+
+            <div class="preview-content">
+              <h3>Living Room</h3>
+
+              <p>
+                Spacious living room designed for arranging sofas, tables,
+                décor, and entertainment furniture.
+              </p>
+            </div>
+          </article>
+
+          <!-- Office -->
+
+          <article class="preview-card">
+            <div class="preview-image">
+              <img src="assets/rooms/office.png" alt="Office Template" />
+            </div>
+
+            <div class="preview-content">
+              <h3>Office</h3>
+
+              <p>
+                Productive workspace template ready for desks, chairs, lamps,
+                and office furniture.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+
+      <section class="workflow" id="workflow">
+        <div class="section-header">
+          <span class="section-tag"> HOW IT WORKS </span>
+
+          <h2>Design Your Room in Four Simple Steps</h2>
+
+          <p>
+            No software installation. Everything happens directly inside your
+            browser.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-step">
+            <div class="step-number">01</div>
+
+            <h3>Choose Room</h3>
+
+            <p>Select a bedroom, living room, or office template.</p>
+          </article>
+
+          <div class="timeline-arrow">↓</div>
+
+          <article class="timeline-step">
+            <div class="step-number">02</div>
+
+            <h3>Add Furniture</h3>
+
+            <p>
+              Pick furniture pieces from the sidebar and place them inside the
+              room.
+            </p>
+          </article>
+
+          <div class="timeline-arrow">↓</div>
+
+          <article class="timeline-step">
+            <div class="step-number">03</div>
+
+            <h3>Arrange Layout</h3>
+
+            <p>
+              Resize, rotate, duplicate, and organize furniture until the room
+              looks perfect.
+            </p>
+          </article>
+
+          <div class="timeline-arrow">↓</div>
+
+          <article class="timeline-step">
+            <div class="step-number">04</div>
+
+            <h3>Download PNG</h3>
+
+            <p>Export your finished interior design as a high-quality image.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Technology -->
+
+      <section class="technology" id="technology">
+        <div class="section-header">
+          <span class="section-tag"> TECHNOLOGY </span>
+
+          <h2>Built with Modern Web Technologies</h2>
+
+          <p>Fast, lightweight, and completely browser based.</p>
+        </div>
+
+        <div class="tech-badges">
+          <span class="tech-badge"> HTML5 </span>
+
+          <span class="tech-badge"> CSS3 </span>
+
+          <span class="tech-badge"> JavaScript </span>
+
+          <span class="tech-badge"> DOM </span>
+
+          <span class="tech-badge"> html2canvas </span>
+        </div>
+      </section>
+      <!-- Call To Action -->
+
+      <section class="cta" id="cta">
+        <div class="cta-container">
+          <div class="floating-dot"></div>
+          <div class="floating-dot"></div>
+          <div class="floating-dot"></div>
+          <div class="floating-dot"></div>
+
+          <span class="section-tag"> START TODAY </span>
+
+          <h2>Ready to Design Your Dream Room?</h2>
+
+          <p>
+            Create beautiful interiors with an intuitive browser-based design
+            experience. No installation. No sign-up. Just start designing.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="designer.html" class="btn btn-primary btn-large">
+              🚀 Start Designing
+            </a>
+
+            <a href="#preview" class="btn btn-secondary btn-large">
+              View Preview
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">🏡</div>
+
+            <span>Virtual Interior Designer</span>
+          </div>
+
+          <p>
+            A modern browser-based interior design application built with HTML,
+            CSS, and JavaScript.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Navigation</h4>
+
+            <ul>
+              <li>
+                <a href="#home">Home</a>
+              </li>
+
+              <li>
+                <a href="#features">Features</a>
+              </li>
+
+              <li>
+                <a href="#preview">Preview</a>
+              </li>
+
+              <li>
+                <a href="designer.html">Designer</a>
+              </li>
+              <li>
+                <a href="#workflow">How it Works</a>
+              </li>
+            <li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Developer</h4>
+
+            <ul>
+              <li>
+                <a href="https://github.com/Blahari1" target="_blank"> GitHub </a>
+              </li>
+
+              <li>
+                <a href="https://linkedin.com/in/lahari191005" target="_blank"> LinkedIn </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Technology</h4>
+
+            <ul>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>html2canvas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Virtual Interior Designer. All Rights Reserved.</p>
+
+        <p>Designed & Developed by <strong>B Lahari</strong></p>
+      </div>
+    </footer>
+    <!-- Scroll To Top Button -->
+
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to Top">
+      ↑
+    </button>
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+  </body>
 </html>

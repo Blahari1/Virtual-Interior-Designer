@@ -42,11 +42,9 @@
       <!-- ================= LEFT SIDEBAR ================= -->
 
       <aside class="sidebar">
-        <h2>Furniture Library</h2>
-
+<h2> Furniture Library</h2>
         <div class="category">
-          <h3>Bedroom</h3>
-
+<h3> Bedroom </h3>
           <div class="library-grid">
             <div class="furniture-card" data-type="bed">
               <img src="assets/furniture/bed.png" alt="Bed" />
@@ -75,8 +73,7 @@
         </div>
 
         <div class="category">
-          <h3>Living Room</h3>
-
+<h3> Living Room </h3>
           <div class="library-grid">
             <div class="furniture-card" data-type="sofa">
               <img src="assets/furniture/sofa.png" alt="Sofa" />
@@ -108,38 +105,38 @@
       <!-- ================= ROOM CANVAS ================= -->
 
       <main class="designer-area">
-        <div class="canvas-toolbar">
+       <div class="room-selector">
           <span>Room Canvas</span>
 
           <div>
-            <button onclick="changeRoom('Bedroom')">Bedroom</button>
+            <button class="room-btn active" onclick="changeRoom('Bedroom', this)">
+    🛏 Bedroom
+</button>
 
-            <button onclick="changeRoom('Living Room')">Living Room</button>
+<button class="room-btn" onclick="changeRoom('Living Room', this)">
+    🛋 Living Room
+</button>
 
-            <button onclick="changeRoom('Office')">Office</button>
+<button class="room-btn" onclick="changeRoom('Office', this)">
+    💻 Office
+</button>
           </div>
         </div>
 
         <div id="roomCanvas">
-          <!-- Perspective Room -->
-
-          <div id="roomCanvas">
 
     <img
         id="roomImage"
         src="assets/rooms/room.png"
-        alt="Room">
+        alt="Bedroom">
 
     <div id="furnitureContainer"></div>
 
+    <div class="canvas-message">
+        Click any furniture item from the left panel to start designing.
+    </div>
+
 </div>
-
-          <div id="furnitureContainer"></div>
-
-          <div class="canvas-message">
-            Click any furniture item from the left panel to start designing.
-          </div>
-        </div>
       </main>
 
       <!-- ================= RIGHT PANEL ================= -->
@@ -201,10 +198,6 @@
           </button>
 
           <button class="action-btn delete" id="deleteBtn">Delete</button>
-        </div>
-        </div>
-
-        
         </div>
       </aside>
     </div>
