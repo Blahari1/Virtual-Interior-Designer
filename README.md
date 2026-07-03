@@ -1,25 +1,35 @@
 # 🏠 Virtual Interior Designer
 
-> **Design your dream room in minutes.**
+> **Design your dream space, one room at a time.**
 
-A browser-based **Virtual Interior Designer** built using **HTML, CSS, and JavaScript**. This application allows users to create beautiful room layouts by placing, moving, resizing, rotating, and arranging 3D furniture inside different room templates.
+A modern **browser-based Virtual Interior Designer** built using **HTML, CSS, and JavaScript**. Create elegant bedrooms, living rooms, and office spaces by placing, arranging, rotating, resizing, and customizing furniture in professionally designed room templates—all directly from your browser without installing any software.
 
 ---
 
-## 📸 Preview
+# 🌐 Live Demo
 
-> Add screenshots of your application here.
+> 🔗 **Coming Soon**
 
-### Landing Page
-![Landing Page](screenshots/landing-page.png)
+*(Add your GitHub Pages or Netlify link here after deployment.)*
 
-### Designer Workspace
-![Designer Workspace](screenshots/designer-workspace.png)
+---
 
-### Bedroom Design
+# 📸 Preview
+
+## Landing Page
+
+![Landing Page](screenshots/Landingpage.png)
+
+## Designer Workspace
+
+![Designer Workspace](screenshots/designworkspace.png)
+
+## Bedroom Design
+
 ![Bedroom](screenshots/bedroom.png)
 
-### Living Room Design
+## Living Room Design
+
 ![Living Room](screenshots/livingroom.png)
 
 ---
@@ -28,43 +38,71 @@ A browser-based **Virtual Interior Designer** built using **HTML, CSS, and JavaS
 
 ## 🛋 Furniture Library
 
-- Add furniture with one click
-- Multiple furniture objects
-- Transparent 3D furniture assets
 - Modern furniture collection
+- Add furniture with one click
+- Multiple furniture support
+- Transparent PNG furniture assets
+- Interactive furniture selection
 
 ### Available Furniture
 
 - 🛏 Bed
 - 🛋 Sofa
 - 🪑 Chair
-- ☕ Coffee Table
+- ☕ Table
 - 📺 TV Unit
 - 🌿 Plant
 - 💡 Lamp
-- 🧺 Rug
+- 🧺 Carpet
 
 ---
 
-## 🎨 Room Templates
+## 🏡 Room Templates
 
-- Bedroom
-- Living Room
-- Office
+Instantly switch between professionally designed room templates.
 
-Switch between different room layouts instantly.
+- 🛏 Bedroom
+- 🛋 Living Room
+- 💻 Office
 
 ---
 
-## 🖱 Furniture Controls
+## 🎨 Furniture Editing
 
-- Drag & Drop
-- Resize
-- Rotate
-- Duplicate
-- Delete
-- Select furniture
-- Multiple object support
+Customize every object inside your room.
+
+- Move furniture
+- Resize furniture
+- Rotate furniture
+- Duplicate furniture
+- Delete furniture
+- Select multiple items individually
+- Maintain object layering
+
+---
+
+## 📤 Export Design
+
+Export your finished room design as a **high-quality PNG image** using **html2canvas**.
+
+---
+
+## 🌙 Theme Support
+
+- Dark Mode
+- Light Mode
+- Theme synchronization between Landing Page and Designer Workspace using Local Storage
+
+---
+
+## 📱 Responsive Design
+
+Optimized for
+
+- 💻 Desktop
+- 🖥 Laptop
+- 📱 Tablet
+- 📲 Mobile
 
 ---
 
@@ -82,49 +120,34 @@ Switch between different room layouts instantly.
 
 ---
 
-## 📥 Export
-
-Download the current room design as a PNG image with a single click.
-
----
-
-## 📱 Responsive Design
-
-Supports
-
-- Desktop
-- Laptop
-- Tablet
-- Mobile
-
----
-
 # 🖼 Assets
 
-The project uses:
+This project includes:
 
-- 3D room backgrounds
-- Transparent PNG furniture
-- Modern UI icons
+- Modern isometric room templates
+- Transparent furniture PNG assets
+- Responsive user interface
+- Glassmorphism-inspired design
+- Modern iconography
 
 ---
 
-# 🛠 Technologies Used
+# 🛠 Built With
 
 - HTML5
 - CSS3
 - JavaScript (ES6)
 - DOM Manipulation
-- Flexbox
+- CSS Flexbox
 - CSS Grid
-- Local Browser APIs
+- Local Storage
 - html2canvas
 
 ---
 
 # 📂 Project Structure
 
-```
+```text
 VirtualInteriorDesigner
 │
 ├── index.html
@@ -141,75 +164,89 @@ VirtualInteriorDesigner
 │
 ├── assets
 │   ├── furniture
-│   |── rooms
+│   ├── rooms
+│   ├── icons
+│   └── textures
+│
+└── screenshots
 ```
 
 ---
 
 # 🚀 Getting Started
 
-## Clone the repository
+## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/Virtual-Interior-Designer.git
+git clone https://github.com/Blahari1/Virtual-Interior-Designer.git
 ```
 
----
+## 2. Open the Project
 
-## Open the project
+Open the project folder in **Visual Studio Code**.
 
-Open the folder in **Visual Studio Code**.
-
----
-
-## Run the project
+## 3. Run the Application
 
 Install the **Live Server** extension.
 
-Right-click **index.html**
+Right-click on **index.html**
 
-Click
+Select
 
-```
+```text
 Open with Live Server
 ```
+
+The application will launch in your browser.
+
+---
+
+# 🌍 Browser Support
+
+- Google Chrome ✅
+- Microsoft Edge ✅
+- Mozilla Firefox ✅
+- Safari ✅
 
 ---
 
 # 🎯 Future Enhancements
 
-- Save and Load Designs
+- Save & Load Designs
 - Undo / Redo
 - Snap-to-Grid
 - Furniture Search
-- Kitchen Template
-- Bathroom Template
+- Kitchen Templates
+- Bathroom Templates
 - Drag Resize Handles
-- Rotation Handle
+- Rotation Handles
 - Furniture Categories
 - Layer Management
-- User Accounts
-- Cloud Storage
 - AI Room Suggestions
-- 3D Model Support
+- Cloud Storage
+- User Accounts
+- 3D Furniture Models
 
 ---
 
-# 💡 What I Learned
+# 📚 What I Learned
 
-During this project I gained practical experience in:
+This project helped me strengthen my skills in:
 
-- HTML page structuring
-- CSS Flexbox & Grid
-- Responsive UI Design
-- JavaScript DOM Manipulation
+- HTML5 Structure
+- Modern CSS
+- Responsive Web Design
+- CSS Grid & Flexbox
+- JavaScript (ES6)
+- DOM Manipulation
 - Event Handling
+- Drag-and-Drop Interactions
 - Object Selection
-- Drag-and-Drop Functionality
-- Image Manipulation
-- Keyboard Event Handling
-- Exporting Canvas as PNG
-- Application State Management
+- State Management
+- Local Storage
+- Canvas Export
+- User Interface Design
+- Responsive Application Development
 
 ---
 
@@ -223,10 +260,14 @@ GitHub: https://github.com/Blahari1
 
 # 📄 License
 
-This project is developed for educational and portfolio purposes.
+This project is developed for **educational and portfolio purposes**.
 
 ---
 
-# ⭐ If you like this project
+# ⭐ Support
 
-Give it a ⭐ on GitHub!
+If you found this project helpful, consider giving it a **⭐ Star** on GitHub.
+
+It helps others discover the project and supports future improvements.
+
+---
