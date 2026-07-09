@@ -1,273 +1,173 @@
-# 🏠 Virtual Interior Designer
+# 🏡 Virtual Interior Designer
 
-> **Design your dream space, one room at a time.**
-
-A modern **browser-based Virtual Interior Designer** built using **HTML, CSS, and JavaScript**. Create elegant bedrooms, living rooms, and office spaces by placing, arranging, rotating, resizing, and customizing furniture in professionally designed room templates—all directly from your browser without installing any software.
+A full-stack web application that allows users to design and customize virtual rooms through an interactive browser-based interface. Users can securely register, log in, create personalized room layouts, and export their designs as high-quality PNG images.
 
 ---
 
-# 🌐 Live Demo
+## ✨ Features
 
-> 🔗 **Coming Soon**
-
-*(Add your GitHub Pages or Netlify link here after deployment.)*
-
----
-
-# 📸 Preview
-
-## Landing Page
-
-![Landing Page](screenshots/Landingpage.png)
-
-## Designer Workspace
-
-![Designer Workspace](screenshots/designingworkspace.png)
-
-## Bedroom Design
-
-![Bedroom](screenshots/bedroom.png)
-
-## Living Room Design
-
-![Living Room](screenshots/livingroom.png)
+* 🔐 Secure User Authentication (JWT)
+* 📧 Email Verification
+* 🛏️ Multiple Room Templates (Bedroom, Living Room, Office)
+* 🪑 Add Furniture to Rooms
+* ✋ Drag & Move Furniture
+* 📏 Resize Furniture
+* 🔄 Rotate Furniture
+* 📑 Duplicate Furniture
+* 🗑️ Delete Furniture
+* 🌙 Dark / Light Theme
+* 📸 Export Room Design as PNG
+* 📱 Responsive User Interface
 
 ---
 
-# ✨ Features
+## 🛠️ Tech Stack
 
-## 🛋 Furniture Library
+### Frontend
 
-- Modern furniture collection
-- Add furniture with one click
-- Multiple furniture support
-- Transparent PNG furniture assets
-- Interactive furniture selection
+* HTML5
+* CSS3
+* JavaScript (ES6)
+* html2canvas
 
-### Available Furniture
+### Backend
 
-- 🛏 Bed
-- 🛋 Sofa
-- 🪑 Chair
-- ☕ Table
-- 📺 TV Unit
-- 🌿 Plant
-- 💡 Lamp
-- 🧺 Carpet
+* Node.js
+* Express.js
+* JWT Authentication
+* Nodemailer
 
----
+### Database
 
-## 🏡 Room Templates
-
-Instantly switch between professionally designed room templates.
-
-- 🛏 Bedroom
-- 🛋 Living Room
-- 💻 Office
+* MongoDB Atlas
+* Mongoose
 
 ---
 
-## 🎨 Furniture Editing
-
-Customize every object inside your room.
-
-- Move furniture
-- Resize furniture
-- Rotate furniture
-- Duplicate furniture
-- Delete furniture
-- Select multiple items individually
-- Maintain object layering
-
----
-
-## 📤 Export Design
-
-Export your finished room design as a **high-quality PNG image** using **html2canvas**.
-
----
-
-## 🌙 Theme Support
-
-- Dark Mode
-- Light Mode
-- Theme synchronization between Landing Page and Designer Workspace using Local Storage
-
----
-
-## 📱 Responsive Design
-
-Optimized for
-
-- 💻 Desktop
-- 🖥 Laptop
-- 📱 Tablet
-- 📲 Mobile
-
----
-
-## ⌨ Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| ↑ ↓ ← → | Move Selected Furniture |
-| Delete | Delete Selected Furniture |
-| R | Rotate Right |
-| Shift + R | Rotate Left |
-| + | Increase Size |
-| - | Decrease Size |
-| Ctrl + D | Duplicate Furniture |
-
----
-
-# 🖼 Assets
-
-This project includes:
-
-- Modern isometric room templates
-- Transparent furniture PNG assets
-- Responsive user interface
-- Glassmorphism-inspired design
-- Modern iconography
-
----
-
-# 🛠 Built With
-
-- HTML5
-- CSS3
-- JavaScript (ES6)
-- DOM Manipulation
-- CSS Flexbox
-- CSS Grid
-- Local Storage
-- html2canvas
-
----
-
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```text
-VirtualInteriorDesigner
+VirtualInteriorDesigner/
 │
-├── index.html
-├── designer.html
-├── README.md
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   ├── server.js
+│   └── package.json
 │
-├── css
-│   ├── style.css
-│   └── designer.css
+├── frontend/
+│   ├── assets/
+│   ├── css/
+│   ├── js/
+│   ├── designer.html
+│   ├── login.html
+│   ├── register.html
+│   ├── verifyOTP.html
+│   ├── forgotPassword.html
+│   ├── resetPassword.html
+│   └── index.html
 │
-├── js
-│   ├── app.js
-│   └── designer.js
-│
-├── assets
-│   ├── furniture
-│   ├── rooms
-│   ├── icons
-│   └── textures
-│
-└── screenshots
+└── README.md
 ```
 
 ---
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
-## 1. Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Blahari1/Virtual-Interior-Designer.git
+cd Virtual-Interior-Designer
 ```
 
-## 2. Open the Project
+---
 
-Open the project folder in **Visual Studio Code**.
+### 2. Install Backend Dependencies
 
-## 3. Run the Application
-
-Install the **Live Server** extension.
-
-Right-click on **index.html**
-
-Select
-
-```text
-Open with Live Server
+```bash
+cd backend
+npm install
 ```
 
-The application will launch in your browser.
+---
+
+### 3. Configure Environment Variables
+
+Create a `.env` file inside the backend folder.
+
+```env
+PORT=5000
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_jwt_secret
+
+EMAIL_USER=your_email
+
+EMAIL_PASS=your_email_password
+```
 
 ---
 
-# 🌍 Browser Support
+### 4. Start Backend Server
 
-- Google Chrome ✅
-- Microsoft Edge ✅
-- Mozilla Firefox ✅
-- Safari ✅
+```bash
+npm start
+```
 
----
+or
 
-# 🎯 Future Enhancements
-
-- Save & Load Designs
-- Undo / Redo
-- Snap-to-Grid
-- Furniture Search
-- Kitchen Templates
-- Bathroom Templates
-- Drag Resize Handles
-- Rotation Handles
-- Furniture Categories
-- Layer Management
-- AI Room Suggestions
-- Cloud Storage
-- User Accounts
-- 3D Furniture Models
+```bash
+npm run dev
+```
 
 ---
 
-# 📚 What I Learned
+### 5. Open the Frontend
 
-This project helped me strengthen my skills in:
-
-- HTML5 Structure
-- Modern CSS
-- Responsive Web Design
-- CSS Grid & Flexbox
-- JavaScript (ES6)
-- DOM Manipulation
-- Event Handling
-- Drag-and-Drop Interactions
-- Object Selection
-- State Management
-- Local Storage
-- Canvas Export
-- User Interface Design
-- Responsive Application Development
+Open `frontend/index.html` using Live Server or any local web server.
 
 ---
 
-# 👨‍💻 Author
+## 📸 Application Workflow
 
-**Lahari**
+1. Register a new account.
+2. Verify your email using the OTP.
+3. Log in securely.
+4. Select a room template.
+5. Add and customize furniture.
+6. Resize, rotate, duplicate, or delete items.
+7. Switch between Dark and Light themes.
+8. Export the final design as a PNG image.
 
-GitHub: https://github.com/Blahari1
+---
+
+## 🎯 Future Enhancements
+
+* AI-powered furniture recommendations
+* Save multiple room designs
+* Undo / Redo functionality
+* Cloud storage for user projects
+* Furniture categories and search
+* Real-time collaboration
+* 3D room visualization
 
 ---
 
-# 📄 License
+## 👩‍💻 Developer
 
-This project is developed for **educational and portfolio purposes**.
+**B Lahari**
 
----
-
-# ⭐ Support
-
-If you found this project helpful, consider giving it a **⭐ Star** on GitHub.
-
-It helps others discover the project and supports future improvements.
+* GitHub: https://github.com/Blahari1
+* LinkedIn: https://linkedin.com/in/lahari191005
 
 ---
+
+## 📄 License
+
+This project is developed for educational and portfolio purposes.
