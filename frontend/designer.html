@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Virtual Interior Designer</title>
+
+    <link rel="stylesheet" href="css/designer.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ================= TOP NAVBAR ================= -->
+
+    <header class="topbar">
+      <div class="logo">🏠 <span>Virtual Interior Designer</span></div>
+
+      <div class="toolbar">
+        <button id="newRoomBtn">New Room</button>
+
+        <button id="clearRoomBtn">Clear Room</button>
+
+        <button id="downloadBtn">Export PNG</button>
+
+        <button id="themeBtn">🌙</button>
+        <button id="homeBtn">Home</button>
+       
+      </div>
+    </header>
+
+    <!-- ================= MAIN LAYOUT ================= -->
+
+    <div class="workspace">
+      <!-- ================= LEFT SIDEBAR ================= -->
+
+      <aside class="sidebar">
+        <h2>Furniture Library</h2>
+        <div class="category">
+          <h3>Bedroom</h3>
+          <div class="library-grid">
+            <div class="furniture-card" data-type="bed">
+              <img src="assets/furniture/bed.png" alt="Bed" />
+
+              <p>Bed</p>
+            </div>
+
+            <div class="furniture-card" data-type="chair">
+              <img src="assets/furniture/chair.png" alt="Chair" />
+
+              <p>Chair</p>
+            </div>
+
+            <div class="furniture-card" data-type="table">
+              <img src="assets/furniture/table.png" alt="Table" />
+
+              <p>Table</p>
+            </div>
+
+            <div class="furniture-card" data-type="lamp">
+              <img src="assets/furniture/lamp.png" alt="Lamp" />
+
+              <p>Lamp</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="category">
+          <h3>Living Room</h3>
+          <div class="library-grid">
+            <div class="furniture-card" data-type="sofa">
+              <img src="assets/furniture/sofa.png" alt="Sofa" />
+
+              <p>Sofa</p>
+            </div>
+
+            <div class="furniture-card" data-type="tv">
+              <img src="assets/furniture/tv.png" alt="TV" />
+
+              <p>TV Unit</p>
+            </div>
+
+            <div class="furniture-card" data-type="plant">
+              <img src="assets/furniture/plant.png" alt="Plant" />
+
+              <p>Plant</p>
+            </div>
+
+            <div class="furniture-card" data-type="carpet">
+              <img src="assets/furniture/carpet.png" alt="Carpet" />
+
+              <p>Carpet</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ================= ROOM CANVAS ================= -->
+
+      <main class="designer-area">
+        <div class="room-selector">
+          <span>Room Canvas</span>
+
+          <div>
+            <button
+              class="room-btn active"
+              onclick="changeRoom('Bedroom', this)"
+            >
+              🛏 Bedroom
+            </button>
+
+            <button class="room-btn" onclick="changeRoom('Living Room', this)">
+              🛋 Living Room
+            </button>
+
+            <button class="room-btn" onclick="changeRoom('Office', this)">
+              💻 Office
+            </button>
+          </div>
+        </div>
+
+        <div id="roomCanvas">
+          <img id="roomImage" src="assets/rooms/room.png" alt="Bedroom" />
+
+          <div id="furnitureContainer"></div>
+
+          <div class="canvas-message">
+            Click any furniture item from the left panel to start designing.
+          </div>
+        </div>
+      </main>
+
+      <!-- ================= RIGHT PANEL ================= -->
+
+      <aside class="properties">
+        <h2>Properties</h2>
+
+        <div class="property-card">
+          <h3>Selected Item</h3>
+
+          <p id="selectedName">None</p>
+        </div>
+
+        <div class="property-card">
+          <h3>Move</h3>
+
+          <div class="move-grid">
+            <div></div>
+
+            <button id="moveUp">▲</button>
+
+            <div></div>
+
+            <button id="moveLeft">◀</button>
+
+            <button id="moveDown">▼</button>
+
+            <button id="moveRight">▶</button>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <h3>Rotate</h3>
+
+          <div class="two-buttons">
+            <button id="rotateLeft">↺</button>
+
+            <button id="rotateRight">↻</button>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <h3>Resize</h3>
+
+          <div class="two-buttons">
+            <button id="increaseSize">+</button>
+
+            <button id="decreaseSize">−</button>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <h3>Actions</h3>
+
+          <button class="action-btn duplicate" id="duplicateBtn">
+            Duplicate
+          </button>
+
+          <button class="action-btn delete" id="deleteBtn">Delete</button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="statusbar">
+      <span
+        >Tip: Click furniture inside the room. Resize, rotate and customize your
+        design.</span
+      >
+
+      <span>Version 1.0</span>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="js/designer.js"></script>
+  </body>
+</html>
