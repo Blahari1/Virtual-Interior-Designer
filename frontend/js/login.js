@@ -3,7 +3,7 @@
    Login Authentication
 ========================================== */
 
-const API_URL = "https://virtual-interior-designer-jiuv.onrender.com";
+const API_URL = "https://virtual-interior-designer-jiuv.onrender.com/api/auth";
 
 // Change this to your Render/Railway URL after deployment
 // Example:
