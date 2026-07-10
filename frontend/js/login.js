@@ -5,6 +5,7 @@
 
 const API_URL = "https://virtual-interior-designer-jiuv.onrender.com/api/auth";
 
+/*const API_URL = "http://localhost:5001/api/auth";*/
 // Change this to your Render/Railway URL after deployment
 // Example:
 // const API_URL = "https://your-backend.onrender.com/api/auth";
@@ -160,17 +161,22 @@ async function sendOTP(email) {
   showLoader();
 
   try {
+    const controller = new AbortController();
+
+    const timeout = setTimeout(() => {
+      controller.abort();
+    }, 180000); // 3 minutes
+
     const response = await fetch(`${API_URL}/send-otp`, {
       method: "POST",
-
       headers: {
         "Content-Type": "application/json",
       },
-
-      body: JSON.stringify({
-        email,
-      }),
+      body: JSON.stringify({ email }),
+      signal: controller.signal,
     });
+
+    clearTimeout(timeout);
 
     const data = await response.json();
 

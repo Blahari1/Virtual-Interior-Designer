@@ -16,7 +16,7 @@ app.use(
   cors({
     origin: "https://virtual-interior-designer.vercel.app",
     credentials: true,
-  })
+  }),
 );
 app.use(express.json());
 
@@ -34,3 +34,12 @@ const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+const transporter = require("./config/mail");
+
+/*transporter.verify((error, success) => {
+  if (error) {
+    console.error("SMTP Error:", error);
+  } else {
+    console.log("SMTP Ready");
+  }
+});*/
