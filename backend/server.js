@@ -1,9 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
 
 const connectDB = require("./config/db");
-
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 dotenv.config();
 
 connectDB();
@@ -13,10 +17,7 @@ const authRoutes = require("./routes/authRoutes");
 const app = express();
 
 app.use(
-  cors({
-    origin: "https://virtual-interior-designer.vercel.app",
-    credentials: true,
-  }),
+  cors(),
 );
 app.use(express.json());
 
