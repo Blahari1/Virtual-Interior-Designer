@@ -3,11 +3,11 @@
    Login Authentication
 ========================================== */
 
-<<<<<<< HEAD:frontend/js/login.js
+
 const API_URL = "https://virtual-interior-designer-vqfn.onrender.com";
-=======
+
 const API_URL = "/api/auth";
->>>>>>> d742568 (Deploy full stack on Render):backend/public/js/login.js
+
 
 /*const API_URL = "http://localhost:5001/api/auth";*/
 // Change this to your Render/Railway URL after deployment
