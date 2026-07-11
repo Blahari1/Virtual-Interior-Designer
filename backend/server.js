@@ -5,20 +5,19 @@ const path = require("path");
 
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
-
+const app = express();
 dotenv.config();
 
 connectDB();
 
-const app = express();
+
 
 // Middleware
 app.use(express.json());
-app.use(cors());
 
 // Serve frontend
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use(cors());
 // API Routes
 app.use("/api/auth", authRoutes);
 
