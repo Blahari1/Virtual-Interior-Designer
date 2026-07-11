@@ -28,11 +28,6 @@ app.get("/", (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 5001;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
 const transporter = require("./config/mail");
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
