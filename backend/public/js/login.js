@@ -4,9 +4,8 @@
 ========================================== */
 
 
-const API_URL = "https://virtual-interior-designer-h02q.onrender.com";
 
-const API_URL = "/api/auth";
+const API_URL = "https://virtual-interior-designer-h02q.onrender.com/api/auth";
 
 
 /*const API_URL = "http://localhost:5001/api/auth";*/
